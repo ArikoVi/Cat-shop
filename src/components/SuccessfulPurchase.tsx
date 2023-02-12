@@ -10,9 +10,11 @@ export default function SuccessfulPurchase() {
     return (
         <div className="flex flex-col justify-center items-center">
             <img className="w-[120px] m-[24px]" src={successLogo} alt="Итого"/>
-            <button onClick={close} className="btn">
-                <Link to="/">OK</Link>
-            </button>
+            <Link to="/">
+                <button onClick={close} className="btn">
+                    OK
+                </button>
+            </Link>
         </div>
     )
 }
