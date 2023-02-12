@@ -1,14 +1,13 @@
 .tooltip {
   &_bubble {
-    position: relative; /* относительное позиционирование */
-    width: 222px; /* ширина блока */
+    position: relative;
+    width: 222px;
     text-align: center;
     line-height: 1.4em;
-    //margin: 40px auto; /* отступ между блоками */
     background-color: #fff;
     border: 2px solid #d6d6d9;
     border-radius: 30px;
-    padding: 16px; /* поле между текстом и рамкой */
+    padding: 16px;
 
     &:before,
     &:after {
@@ -19,8 +18,8 @@
     }
 
     &.thought {
-      border-radius: 200px; /* скругление углов */
-      padding: 20px; /* добавление отступов */
+      border-radius: 200px;
+      padding: 20px;
 
       &:before,
       &:after {

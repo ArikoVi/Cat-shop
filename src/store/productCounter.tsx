@@ -12,7 +12,6 @@ class ProductCounter {
 
     addProduct(product:IProduct) {
         const index = this.products.findIndex(p => p.id === product.id);
-        console.log(product)
 
         if (index < 0) {
             product.count = 1;

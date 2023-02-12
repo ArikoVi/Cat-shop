@@ -23,8 +23,6 @@ export const Counter = observer(function Counter({product}: ProductProps) {
     }
 
     const handleValueChange = (newValue: number, isField: boolean) => {
-        console.log(count, count + 1);
-        console.log(newValue, isField);
 
         if (newValue < 1) {
             newValue = 1;
@@ -52,7 +50,6 @@ export const Counter = observer(function Counter({product}: ProductProps) {
                 }
             }, 250);
         } else {
-            console.log(count, newValue)
             changeValue({count, newValue});
         }
     }

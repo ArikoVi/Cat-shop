@@ -11,7 +11,6 @@ import emptyLogo from "../icons/empty.png";
 
 export const ShoppingBasket = observer(function ShoppingBasket() {
     const {modal, open, close} = useContext(ModalContext)
-    console.log(productCounter.products.length)
 
     return (
         <div className="mx-auto max-w-[1440px] p-[24px]">

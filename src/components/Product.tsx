@@ -16,7 +16,6 @@ export const Product = observer(function Product({product}: ProductProps) {
         setDetails(prev => !prev);
     }
     const addProductHandler = (product: IProduct) => {
-        console.log(product)
         productCounter.addProduct(product);
     }
 
