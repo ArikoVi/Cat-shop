@@ -21,7 +21,7 @@ export const Product = observer(function Product({product}: ProductProps) {
 
     return (
         <div
-            className="flex flex-col border rounded justify-items-center p-4 h-[520px] product"
+            className="flex flex-col border rounded justify-items-center p-4 product"
             onClick={() => addProductHandler(product)}
         >
             <div className="flex flex-auto h-[60%] justify-center h-[320px]">
