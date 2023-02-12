@@ -1,0 +1,60 @@
+.tooltip {
+  &_bubble {
+    position: relative; /* относительное позиционирование */
+    width: 222px; /* ширина блока */
+    text-align: center;
+    line-height: 1.4em;
+    //margin: 40px auto; /* отступ между блоками */
+    background-color: #fff;
+    border: 2px solid #d6d6d9;
+    border-radius: 30px;
+    padding: 16px; /* поле между текстом и рамкой */
+
+    &:before,
+    &:after {
+      content: ' ';
+      position: absolute;
+      width: 0;
+      height: 0;
+    }
+
+    &.thought {
+      border-radius: 200px; /* скругление углов */
+      padding: 20px; /* добавление отступов */
+
+      &:before,
+      &:after {
+        left: 10px;
+        bottom: -30px;
+        width: 40px;
+        height: 40px;
+        background-color: #fff;
+        border: 2px solid #d6d6d9;
+        border-radius: 28px;
+      }
+
+      &:after {
+        width: 20px;
+        height: 20px;
+        left: 5px;
+        bottom: -40px;
+        border-radius: 18px;
+      }
+    }
+
+    &.speech:before {
+      left: 30px;
+      bottom: -42px;
+      border: 20px solid;
+      border-color: #d6d6d9 transparent transparent #d6d6d9;
+    }
+
+    &.speech:after {
+      left: 32px;
+      bottom: -39px;
+      border: 20px solid;
+      border-color: #fff transparent transparent #fff;
+    }
+
+  }
+}
