@@ -1,8 +1,8 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 import basketLogo from '../icons/cat.png';
-import productCounter from "../store/productCounter";
 import {observer} from "mobx-react-lite";
+import {store} from "../store/Basket";
 
 
 export const Navigation = observer(function Navigation() {
@@ -15,7 +15,7 @@ export const Navigation = observer(function Navigation() {
         <Link to="/" className="mr-8">Каталог</Link>
         <Link to="/about" className="flex items-center">
             <img className="w-[32px] mr-[8px]" src={basketLogo} alt={'Корзина'}/>
-            {productCounter.products.length}
+            {store.products.length}
         </Link>
       </span></div>
         </nav>

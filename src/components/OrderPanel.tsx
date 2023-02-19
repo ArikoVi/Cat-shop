@@ -1,11 +1,10 @@
 import {observer} from "mobx-react-lite";
 import React from "react";
-import {IProduct} from "../models";
 import {Counter} from "./Counter";
 import '../css/product.scss';
 
 interface ProductProps {
-    product: IProduct
+    product: any
 }
 
 export const OrderPanelItem = observer(function OrderPanelItem({product}: ProductProps) {

@@ -1,11 +1,10 @@
 import React, {MouseEventHandler, useState} from 'react'
-import {IProduct} from '../models'
-import productCounter from "../store/productCounter";
 import {observer} from "mobx-react-lite";
 import '../css/product.scss';
+import {store} from "../store/Basket";
 
 interface ProductProps {
-    product: IProduct
+    product: any
 }
 
 export const Product = observer(function Product({product}: ProductProps) {
@@ -15,8 +14,8 @@ export const Product = observer(function Product({product}: ProductProps) {
         event.stopPropagation();
         setDetails(prev => !prev);
     }
-    const addProductHandler = (product: IProduct) => {
-        productCounter.addProduct(product);
+    const addProductHandler = (product: any) => {
+        store.addProduct(product);
     }
 
     return (

@@ -1,25 +1,21 @@
-import React, {useState, useRef, useEffect} from 'react';
+import React, { useRef } from 'react';
 import '../css/counter.scss';
-import {IProduct} from "../models";
-import productCounter from "../store/productCounter";
 import {observer} from "mobx-react-lite";
 import deleteLogo from "../icons/trash-cat.png";
+import {store} from "../store/Basket";
 
 interface ProductProps {
-    product: IProduct
+    product: any
 }
 
 export const Counter = observer(function Counter({product}: ProductProps) {
 
-    const [count, setCount] = useState(product.count ? product.count : 1);
+    const count = product.count ? product.count : 1;
+
     const inputRef = useRef<HTMLInputElement>(null);
-    useEffect(() => {
-        product.count && setCount(product.count !== 100 ? product.count : 99);
-    }, [product.count])
 
     const changeValue = ({count, newValue}: any) => {
-        productCounter.changeQuantity(newValue !== 100 ? newValue : 99, product);
-        setCount(newValue !== 100 ? newValue : 99);
+        store.changeQuantity(newValue !== 100 ? newValue : 99, product);
     }
 
     const handleValueChange = (newValue: number, isField: boolean) => {
@@ -67,7 +63,7 @@ export const Counter = observer(function Counter({product}: ProductProps) {
                 </div>
                 <button className='button' onClick={() => handleValueChange(count + 1, false)} title="+1">+</button>
             </div>
-            <button className='' onClick={() => productCounter.deleteProduct(product)} title="-1">
+            <button className='' onClick={() => store.deleteProduct(product)} title="-1">
                 <img className="w-[32px]" src={deleteLogo} alt={'Удалить'}/>
             </button>
         </div>
