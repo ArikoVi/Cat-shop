@@ -15,13 +15,12 @@ export const ProductsPage = observer(function ProductsPage() {
         <div className="container mx-auto max-w-[1440px] p-[24px]">
             {loading && <Loader/>}
             {error && <ErrorMessage error={error}/>}
-            {store.products.length > 0 && <div className="order-panel grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 mb-[42px]">
+            {store.count > 0 && <div className="order-panel grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 mb-[42px]">
                 {store.products.map(item => <OrderPanelItem product={item} key={item.id}/>)}
             </div>}
-
-            {store.products.length > 0 && <TotalProduct/>}
+            {store.count > 0 && <TotalProduct/>}
             <div className="products grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-[42px]">
-                {products.map(product => <Product product={product} key={product.id}/>)}
+               {/* {products.map(product => <Product product={product} key={product.id}/>)}*/}
                 {store.products.map(product => <Product product={product} key={product.id}/>)}
             </div>
         </div>

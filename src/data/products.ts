@@ -11,7 +11,8 @@ export const prouctsObj: IProduct[] = [
         rating: {
             rate: 3.9,
             count: 120
-        }
+        },
+        count: 0,
     },
     {
         id: 2,
@@ -23,7 +24,8 @@ export const prouctsObj: IProduct[] = [
         rating: {
             rate: 4.1,
             count: 259
-        }
+        },
+        count: 0,
     },
     {
         id: 3,
@@ -35,6 +37,7 @@ export const prouctsObj: IProduct[] = [
         rating: {
             rate: 4.7,
             count: 500
-        }
+        },
+        count: 0,
     }
 ]

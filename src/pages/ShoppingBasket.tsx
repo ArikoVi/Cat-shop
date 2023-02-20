@@ -18,7 +18,7 @@ export const ShoppingBasket = observer(function ShoppingBasket() {
                 {store.products.map(item => <OrderPanelItem product={item} key={item.id}/>)}
             </div>
             <div className="flex justify-center flex-col md:flex-row md:items-end items-center">
-                {store.products.length > 0 && <><TotalProduct/>
+                {store.count > 0 && <><TotalProduct/>
                     <div className="flex items-end md:mt-0 mt-[24px]">
                         <button className="btn" onClick={open}>Заказать
                         </button>
@@ -30,7 +30,7 @@ export const ShoppingBasket = observer(function ShoppingBasket() {
                     </Modal>}
                 </>}
             </div>
-            {store.products.length === 0 &&
+            {store.count === 0 &&
                 <div className="flex flex-col items-center">
                     <img className="w-[120px] mb-[24px]" src={emptyLogo} alt="Пусто"/>
                 Корзина пуста

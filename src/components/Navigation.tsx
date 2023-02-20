@@ -15,7 +15,7 @@ export const Navigation = observer(function Navigation() {
         <Link to="/" className="mr-8">Каталог</Link>
         <Link to="/about" className="flex items-center">
             <img className="w-[32px] mr-[8px]" src={basketLogo} alt={'Корзина'}/>
-            {store.products.length}
+            {store.count}
         </Link>
       </span></div>
         </nav>

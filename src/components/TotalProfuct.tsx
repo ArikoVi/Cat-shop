@@ -27,7 +27,7 @@ export const TotalProduct = observer(function TotalProduct() {
         <div className="tooltip flex items-end h-[180px]">
             <div><img className="w-[120px]" src={totalLogo} alt="Итого"/></div>
             <div className="tooltip_bubble speech flex self-start">К оформлению
-                {count > 0 && <> {count} {getNoun(count)} на </>} {store.totalSum}
+                {store.count > 0 && <> {store.count} {getNoun(store.count)} на </>} {store.totalSum}
             </div>
 
         </div>
