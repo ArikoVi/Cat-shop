@@ -15,6 +15,7 @@ export const Product = observer(function Product({product}: ProductProps) {
         event.stopPropagation();
         setDetails(prev => !prev);
     }
+
     const addProductHandler = (product: IProduct) => {
         store.addProduct(product);
     }
@@ -39,7 +40,7 @@ export const Product = observer(function Product({product}: ProductProps) {
                     </button>
                 </div>
 
-                {details && <div className="product_item absolute bottom-[112px] p-[8px]">
+                {details && <div onClick={e => e.stopPropagation()} className="product_item absolute bottom-[112px] p-[8px]">
                     <p>{product.description}</p>
                     <p>Rate: <span style={{fontWeight: 'bold'}}>{product?.rating?.rate}</span></p>
                 </div>}

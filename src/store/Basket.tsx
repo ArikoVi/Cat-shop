@@ -79,8 +79,6 @@ const Basket = types
         changeQuantity(count: number, product: IProduct) {
             const index = store.products.findIndex(p => p.id === product.id);
             store.setCount(count, index)
-            store.count = count;
-            product && (product.count = count);
         },
 
         deleteProduct(product: IProduct) {
