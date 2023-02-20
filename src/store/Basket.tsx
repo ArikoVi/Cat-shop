@@ -40,7 +40,7 @@ const Basket = types
 
             return self.products.reduce((count, product) => {
                 if (product.count > 0) {
-                    return (count + 1)
+                    return (count + product.count)
                 } else return count
             }, 0)
         }
