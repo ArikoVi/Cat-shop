@@ -9,7 +9,7 @@ import {TotalProduct} from "../components/TotalProfuct";
 import {store} from "../store/Basket";
 
 export const ProductsPage = observer(function ProductsPage() {
-    const {loading, error, products} = useProducts()
+    const {loading, error} = useProducts()
 
     return (
         <div className="container mx-auto max-w-[1440px] p-[24px]">
@@ -20,7 +20,6 @@ export const ProductsPage = observer(function ProductsPage() {
             </div>}
             {store.count > 0 && <TotalProduct/>}
             <div className="products grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-[42px]">
-               {/* {products.map(product => <Product product={product} key={product.id}/>)}*/}
                 {store.products.map(product => <Product product={product} key={product.id}/>)}
             </div>
         </div>

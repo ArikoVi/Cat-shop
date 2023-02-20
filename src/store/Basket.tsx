@@ -1,6 +1,6 @@
 import {types} from "mobx-state-tree";
 import {IProduct} from "../models";
-import {autorun, toJS} from "mobx";
+import {autorun} from "mobx";
 
 export const Rating = types.model("Rating", {
     rate: types.number,
@@ -16,11 +16,7 @@ export const Product = types.model("Product", {
     image: types.string,
     rating:Rating,
     count: types.number
-}).actions(product => ({
-    setCount(newCount: number) {
-        product.count = newCount
-    },
-}))
+})
 
 const Basket = types
     .model({
@@ -100,19 +96,6 @@ export const store = Basket.create({
     products: []
 });
 
-const storeProduct = Product.create({
-    id: 3,
-    title: 'Mens Cotton Jacket',
-    price: 55.99,
-    description: 'Great outerwear jackets for Spring/Autumn/Winter, suitable for many occasions, such as working, hiking, camping, mountain/rock climbing, cycling, traveling or other outdoors. Good gift choice for you or your family member. A warm hearted love to Father, husband or son in this thanksgiving or Christmas Day.',
-    category: 'men\'s clothing',
-    image: 'https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_.jpg',
-    rating: {
-        rate: 4.7,
-        count: 500
-    },
-    count: 0,
-})
 
 autorun(() => {
     store.totalSum = store.computedTotalSum;

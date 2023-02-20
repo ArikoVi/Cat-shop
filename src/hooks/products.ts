@@ -14,7 +14,7 @@ export function useProducts() {
       setError('')
       setLoading(true)
       const response = await axios.get<IProduct[]>('https://fakestoreapi.com/products?limit=5')
-      response.data.map(item => {
+      response.data.forEach(item => {
         store.createProductList(item)
       })
       setLoading(false)

@@ -5,7 +5,6 @@ import '../css/tooltip.scss';
 import {store} from "../store/Basket";
 
 export const TotalProduct = observer(function TotalProduct() {
-    const count = store.products.length > 0 ? store.products.length : 0;
 
     const getNoun = (number: number, one: string = 'товар', two: string = 'товара', five: string = 'товаров') => {
         let n = Math.abs(number);
